@@ -71,6 +71,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'frbec.wsgi.application'
 
+REST_FRAMEWORK = {
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

@@ -22,11 +22,13 @@ def get_all_points(request):
 @api_view(['POST'])
 def add_transaction(request):
     post_data = request.data
+    print(post_data)
     transaction_data = TransactionSerializer(data=post_data)
     if transaction_data.is_valid():
         transaction_data.save()
         return Response({"Details":"Success"}, status=status.HTTP_200_OK)
     else:
+        print(transaction_data.errors)
         return Response({"Error":"Bad details"}, status=status.HTTP_400_BAD_REQUEST)
     
 
