@@ -14,8 +14,11 @@ Now we need to install the requirements.txt which can be found inside frbec fold
 
 Once the requirements are installed we need to get the project running, please follow the below commands inside frbec folder/ or where the manage.py file exist
 > python manage.py migrate
+
 > python manage.py makemigrations points
+
 > python manage.py migrate --run-syncdb
+
 > python manage.py createsuperuser
 
 Once the above command is run, we can create super user for the db which can be accessed using the following url
@@ -30,7 +33,9 @@ Testing
 
 To create dummy records for testing, either we can use postman or curl commands. The urls are defined as follows
 > POST - Add Transaction - http://localhost:8000/add-transaction/ (Sample post body - {"payer": "UNILEVER", "points": 3000})
+
 > GET - Get all available points - http://localhost:8000/all-points/
+
 > POST - Spend points - http://localhost:8000/spend-points/ (Sample post body - {"points": 5000})
 
 I have included few basic unit tests to ensure the api is working correctly. To run tests please run the following command
